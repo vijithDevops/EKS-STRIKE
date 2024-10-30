@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-piolt-deployment
+  labels:
+    app: eks-piolt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eks-piolt
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: eks-piolt
+    spec:
+      containers:
+        - name: eks-piolt-ecr
+          image: DOCKER_IMAGE
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+
