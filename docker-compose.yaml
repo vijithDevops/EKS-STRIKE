@@ -4,4 +4,4 @@ services:
     build: .
     ports:
       - 8080:8080
-    command: python3 app.py
+    command: python3 app.py # yo
