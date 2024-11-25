@@ -56,7 +56,7 @@ jobs:
 
       - name: Install ALB Ingress Controller
         run: |
-          kubectl apply -k github.com/kubernetes-sigs/aws-alb-ingress-controller//deploy/kubernetes/overlays/aws
+          kubectl apply -k github.com/kubernetes-sigs/aws-alb-ingress-controller/deploy/kubernetes/overlays/aws/ecr
 
       - name: Deploy ALB Ingress Resource
         run: |
